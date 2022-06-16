@@ -1,6 +1,7 @@
 from xml.dom.minidom import Document
 from django.shortcuts import render
 from django.http import HttpResponse
+from django.template import Template, context, loader
 from AppMVT.models import Familiar, Amigos
 
 
@@ -40,6 +41,10 @@ def amigo(self):
 
     amigo1 = Amigos(nombre="veronica", email="veroB@gmail.com", fechaDeNacimiento="2001-02-15", tieneEmpleo=True)
     amigo1.save()
-    Documento = f"Amigo1<br>nombre: {amigo1.nombre} <br>email: {amigo1.email} <br>fecha de nacimiento: {amigo1.fechaDeNacimiento} <br>tiene empleo: {amigo1.tieneEmpleo}"
+    texto = f"Amigo1<br>nombre: {amigo1.nombre} <br>email: {amigo1.email} <br>fecha de nacimiento: {amigo1.fechaDeNacimiento} <br>tiene empleo: {amigo1.tieneEmpleo}"
+    
+    plantilla = loader.get_template("nuestro_primer_MVT/amigos.html")
+
+    Documento = plantilla.render(texto)
 
     return HttpResponse(Documento)
