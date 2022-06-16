@@ -5,7 +5,7 @@ from AppMVT import views
 urlpatterns = [
    
     path('', views.inicio), 
-    path('familiares', views.familiares),
-    path('amigos', views.amigos),
+    path('familiares', views.familiar),
+    path('amigos', views.amigo),
 
 ]
