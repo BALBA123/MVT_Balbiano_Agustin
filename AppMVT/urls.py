@@ -8,4 +8,6 @@ urlpatterns = [
     path('familiares', views.familiar),
     path('amigos', views.amigo),
 
+    path('familiaresss', views.familiares),
+
 ]
