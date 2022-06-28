@@ -1,0 +1,42 @@
+
+{% extends "AppMVT/padre.html" %}
+
+{% load static %}
+
+{% block contenidoQueCambia %}
+    <!--aqui va lo que cambia, y lo que va asociado a esta vista-->
+
+    <head>
+
+        <title>Amigos</title>
+
+    </head>
+
+    <body style="background-color: lightseagreen;">
+        <h1>formulario para Amigos</h1>
+        <br>
+        {% if miFormulario.errors %}
+
+        <p style="background-color: red;">estan mal los datos revisar</p>
+
+        {% endif %}
+
+        <br>
+        <br>
+        <form action="" method="post"> {% csrf_token %}
+
+            <!--aca esta la magia de Django supuestamente...-->
+            <table>
+
+                {{ miFormulario.as_table}}
+
+            </table>
+
+            <input type="submit", value="Enviar">
+
+        </form>
+
+
+
+    </body>
+{% endblock %}

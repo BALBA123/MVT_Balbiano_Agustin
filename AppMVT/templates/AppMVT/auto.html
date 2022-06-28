@@ -1,0 +1,41 @@
+
+{% extends "AppMVT/padre.html" %}
+
+{% load static %}
+
+{% block contenidoQueCambia %}
+    <!--aqui va lo que cambia, y lo que va asociado a esta vista-->
+
+    <head>
+
+        <title>auto</title>
+
+    </head>
+
+    <body style="background-color: lightblue;">
+        <h1>Buscador auto por patente</h1>
+
+        <br>
+        <br>
+        <form action="/AppMVT/buscar/" method="GET">
+
+            <input type="number" name="patente" id="patente" >
+            <input type="submit" name="buscar">
+
+        </form>
+        <p>estamos buscando la patente: {{patente}}</p>
+
+        {% if numero %}
+
+        <ul>
+            {% for car in numero %}
+                <li>{{car.marca}}</li>
+                <li>{{car.modelo}}</li> 
+            {% endfor %}
+        </ul>
+
+        {% endif %}
+
+
+    </body>
+{% endblock %}
