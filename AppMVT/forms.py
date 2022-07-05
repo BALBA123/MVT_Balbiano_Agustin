@@ -10,4 +10,4 @@ class formularioFamiliar(forms.Form):
 class formularioAmigos(forms.Form):
     nombre = forms.CharField(max_length = 30) 
     email = forms.EmailField() 
-    fechaDeNacimiento = forms.DateField()
+    fechaDeNacimiento = forms.CharField(max_length = 10) 

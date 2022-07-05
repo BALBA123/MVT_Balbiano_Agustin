@@ -16,7 +16,7 @@ class Amigos(models.Model):
  
     email = models.EmailField() 
 
-    fechaDeNacimiento = models.DateField() 
+    fechaDeNacimiento = models.CharField(max_length = 10) 
      
 
 class auto(models.Model):

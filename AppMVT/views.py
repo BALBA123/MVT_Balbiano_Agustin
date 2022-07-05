@@ -48,10 +48,10 @@ def agragarAmigo(request):
         if miFormulario.is_valid: #validacion de django
             
             info = miFormulario.cleaned_data #
-
-            familiar = Amigos (nombre=info['nombre'], email=info['email'], fechaDeNacimiento=info['fechaDeNacimiento'])
+            print(info)
+            Amigo = Amigos (nombre=info['nombre'], email=info['email'], fechaDeNacimiento=info['fechaDeNacimiento'])
             
-            familiar.save()
+            Amigo.save()
 
             return render(request, "AppMVT/inicio.html")
     else:
